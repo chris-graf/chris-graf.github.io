@@ -1,0 +1,131 @@
+/* global */
+
+body {
+  background: #3cc;
+  padding-top: 60px;
+  font-family: 'Lato';
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+  position: absolute;
+  text-align: center;
+  font-style: bold;
+  color: #F66;
+  margin: 50% 0 0 0;
+  bottom: 50%;
+  min-width: 240px;
+}
+
+header h1 {
+  text-transform: none;
+  font-size: 4em;
+  font-weight: 300;
+  position: fixed;
+  text-align: center;
+  font-style: bold;
+  color: #F66;
+  margin: 0 auto;
+  width: 100%;
+  height: 10%;
+  line-height: 1.25;
+  top: 0;
+  display: block;
+  background-color: white;
+  z-index: 1000;
+}
+
+a:hover h1 {
+  color: white;
+}
+
+footer h1 {
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  font-size: 1em;
+  top: 90%;
+  bottom: 0;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* elements */
+
+
+.link-array {
+  text-align: center;
+  margin-top: 4%;
+}
+
+.img-box {
+  width: 240px;
+  margin: 0 auto;
+  height: 600px;
+  background-color: black;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  border-radius: 15px 30px;
+  padding: 1px;
+}
+
+@media (max-width: 1240px) {
+  h1 {
+    font-size: 1.75em;
+    min-width: 160px;
+    }
+
+  .img-box {
+    width: 160px;
+  }
+
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 0.75em;
+    min-width: 100px;
+    }
+
+  .img-box {
+    width: 100px;
+  }
+}
