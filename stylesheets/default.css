@@ -3,7 +3,7 @@
 body {
   background: #3cc;
   padding-top: 60px;
-  font-family: 'Lato';
+  font-family: 'Lato', 'Open Sans', serif;
   font-weight: 400;
   margin: 5px 0;
 }
