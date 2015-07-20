@@ -1,0 +1,72 @@
+/* global */
+
+body {
+  background: #3cc;
+  padding-top: 60px;
+  font-family: 'Lato';
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+a:hover h1 {
+  color: white;
+}
+
+footer h1 {
+  margin: auto;
+  width: 100%;
+  font-size: 1em;
+  top: 90%;
+  bottom: 0;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+@media (max-width: 1240px) {
+  h1 {
+    font-size: 1.75em;
+    min-width: 160px;
+    }
+
+  .img-box {
+    width: 160px;
+  }
+
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 0.75em;
+    min-width: 100px;
+    }
+
+  .img-box {
+    width: 100px;
+  }
+}
