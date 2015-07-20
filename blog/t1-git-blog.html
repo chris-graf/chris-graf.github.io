@@ -1,24 +1,111 @@
 <!DOCTYPE html>
+
+<html>
+
 <head>
-	<title>Chris Graf's Tech Blog</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
+  <title>Chris-Graf.io | BLOG</title>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic|Merriweather:400,300italic,700&effect=outline' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
 </head>
 
-<main>
-	<h1>Why Work In Branches?</h1>
-	<h2>If you're not a squirrel</h2>
-	<h4>2015 July 11</h4>
-	
-	<section>
-		<p>
-			The master is supposed to be the authoritative, curated version of the project. Commits should only be pushed to master once they've been reviewed, tested, and certified. You want to ensure not only that your commits are functional themselves, but also that they area free of negative side effects. You do this by working in branches, where you can bork up as much as you want without affecting the master. 
-		</p>
-		<p>
-			This doesn't matter so much when you're only building out some personal side project. When you're working on live code in a professional context with a team of developers, though, you want to be absolutely sure you're not breaking existing features, exposing vulnerabilities, or otherwise introducing chaos before committing to master.
-		</p>
-		<p>
-			Once your commits are ready for primetime, you create a pull request, which is the git way of saying 'submit your contributions.' The owner of the repo then gets to review your changes before accepting the request, which pulls (fetch + merge) your branch back up to the master.﻿
-		</p>
-	</section>
-</main>
+<body>
+   
+  <header>
+    <nav>
+      <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
+    </nav>
+  </header>
+
+    <div class="link-array">
+      <div class="img-box">
+        <a href="#">
+          <section>
+            <img src="imgs/coffee-small.png" />
+            <div class="font-effect-outline">
+              <h1>About</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="index.html">
+          <section>
+            <img src="imgs/typewriter-small.png" />
+            <div class="font-effect-outline">
+              <h1>Blog</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/engines.png" />
+            <div class="font-effect-outline">
+              <h1>Projects</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/news-small.png" />
+            <div class="font-effect-outline">
+              <h1>Media</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/rotary-small.png" />
+            <div class="font-effect-outline">
+              <h1>Contact</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+    </div>
+
+<!-- posts start here -->
+ 
+  <section>
+    <div class="font-effect-outline">
+      <div id="blog-post">
+        Why Work in Branches
+        <h2>If you're not a squirrel</h2>
+        <br>
+        <h2>2015 July 12</h2>
+          <section>
+            <p>
+              The master is supposed to be the authoritative, curated version of the project. Commits should only be pushed to master once they've been reviewed, tested, and certified. You want to ensure not only that your commits are functional themselves, but also that they area free of negative side effects. You do this by working in branches, where you can bork up as much as you want without affecting the master. 
+            </p>
+            <p>
+             	This doesn't matter so much when you're only building out some personal side project. When you're working on live code in a professional context with a team of developers, though, you want to be absolutely sure you're not breaking existing features, exposing vulnerabilities, or otherwise introducing chaos before committing to master.
+            </p>
+            <p>
+              Once your commits are ready for primetime, you create a pull request, which is the git way of saying 'submit your contributions.' The owner of the repo then gets to review your changes before accepting the request, which pulls (fetch + merge) your branch back up to the master.﻿
+            </p>
+          </section>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <h1>
+      <p>&copy; 2015 Christopher Graf</p>
+    </h1>
+  </footer>
+
+</body>
+
+</html>
