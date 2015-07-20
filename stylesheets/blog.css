@@ -51,6 +51,13 @@ header h1 {
 
 /* body */
 
+#list-title {
+  text-align: center;
+  padding-top: 5px;
+  font-size: 4.5em;
+  color: #f66;
+}
+
 ul {
   margin: 40px 0 0 15%;
   list-style-type: none;
@@ -69,15 +76,15 @@ li {
 }
 
 ul img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border-width: 5px;
   border-radius: 15px 30px;
 }
 
 li section {
-  color: white;
-  font-size: 1em;
+  color: black;
+  font-size: 2em;
   font-family: Merriweather;
   display: inline-block;
   vertical-align: top;
