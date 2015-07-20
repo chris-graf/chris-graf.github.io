@@ -49,6 +49,7 @@ a:hover h1 {
 
 footer h1 {
   margin: auto;
+  position: fixed;
   background-color: white;
   width: 100%;
   font-size: 1em;
@@ -82,11 +83,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
 }
 
 /* elements */
