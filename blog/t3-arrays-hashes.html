@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>chris-graf.io | BLOG</title>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic|Merriweather:400,300italic,700&effect=outline' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<body>
+   
+  <header>
+  <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
+    <nav>
+    </nav>
+  </header>
+
+    <div class="link-array">
+      <div class="img-box">
+        <a href="#">
+          <section>
+            <img src="imgs/coffee-small.png" />
+            <div class="font-effect-outline">
+              <h1>About</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="index.html">
+          <section>
+            <img src="imgs/typewriter-small.png" />
+            <div class="font-effect-outline">
+              <h1>Blog</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/engines.png" />
+            <div class="font-effect-outline">
+              <h1>Projects</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/news-small.png" />
+            <div class="font-effect-outline">
+              <h1>Media</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/rotary-small.png" />
+            <div class="font-effect-outline">
+              <h1>Contact</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+    </div>
+
+<!-- post starts here -->
+ 
+  <section>
+    <div class="font-effect-outline">
+      <div id="blog-post">
+        Arrays and Hashes
+        <br>
+        <h2>2015 July 26</h2>
+          <section>
+            <p>
+              Arrays and hashes are both ordered collections of objects. Any Ruby object can be stored in an array or a hash, including other arrays and hashes. The essential difference between the two is how their conets are ordered and accessed, i.e. how you view and handle the objects you store inside them.
+            </p>
+            <br>
+            <p>
+            <strong>Arrays</strong> are organized through the simple means of a numeric index, with the first object stored at index [0]. The index refers only to the relative position of the object in an array, so reordering an array will change which index corresponds to which object.
+            <br>
+            <br>
+            <code>
+              types_of_pie = ["apple", "blueberry", "cherry"]
+              <br>
+              => ["apple", "blueberry", "cherry"]
+              <br>
+              types_of_pie[0]
+              <br>
+              => "apple"
+              <br>
+              types_of_pie.reverse!
+              <br>
+              types_of_pie[0]
+              <br> 
+              => "cherry"
+            </code>
+            <br>
+            <br>
+            <p>
+              <strong>Hashes</strong> are organized on "key-value pairs." Both the key and the value can be any Ruby object. A hash value is similar to an object in an array, except instead accessing a value by its current position in the array, you assign and use a key. While the index of an object in an array changes with reordering, the key-value pairing does not.
+              <br>
+              <br>
+            <code>
+                favorite_pies = {Danny: "apple", Eliza: "blueberry", Francis: "cherry"}
+              <br>
+                => {:Danny=>"apple", :Eliza=>"blueberry", :Francis=>"cherry"}
+            </code>
+              <br>
+              (Note that this array assignment shorthand automatically converts the keys into symbols. To assign strings as keys without conversion, use the => operator.)
+            <code>
+              <br>
+              favorite_pies[:Danny]
+              <br>
+              => "apple"
+              <br>
+              types_of_pie.reverse!
+              <br>
+              => NoMethodError
+            </code>
+            <br>
+            <br>
+            <p>
+              Wait, what? That last step didn't work... because there's no <code>reverse</code> method for hashes. While hashes do remember the order in which their contents were assigned, they're not designed for easy re-ordering. You can sort hashes, but if you really care about the order of your elements, you might be better off with an array. In fact, here are a couple rules of thumb on deciding between the two:
+            </p>
+            <br>
+            <p>
+              When deciding whether to use an array or hash for a particular problem, the first question you should ask yourself is, "Do I care about the order of these objects within the collection?" If yes, go with an array (remember, you can make an array of arrays). Otherwise, ask yourself "Are the objects in my collection <em>homogenous</em>?" That is, are all the objects in your collection all examples of the same general thing?" (and thus, would not require special labels). If yes, stick with an array. Otherwise, go with a hash.
+            </p>
+          </section>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <h1>
+      <p>&copy; 2015 Christopher Graf</p>
+    </h1>
+  </footer>
+
+</body>
+
+</html>
