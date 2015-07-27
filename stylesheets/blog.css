@@ -119,6 +119,10 @@ code {
   padding: 1px;
 }
 
+#blog-post section a {
+  color: blue;
+}
+
 #blog-post p {
   padding-left: 20px;
   text-indent: 50px;
