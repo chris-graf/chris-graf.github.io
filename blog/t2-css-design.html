@@ -13,8 +13,8 @@
 <body>
    
   <header>
+  <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
     <nav>
-      <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
     </nav>
   </header>
 
@@ -78,38 +78,39 @@
 <!-- posts start here -->
  
   <section>
-    <div class="font-effect-outline">
-      <div id="blog-post">
-        Positioning: Relative, Fixed, and Absolute
-        <br>
-        <h2>2015 July 19</h2>
-          <section>
-            <p>
-              <div class="codeblock">display: static;</div>
-              <br>
-              Yes, the title was a bit of a lie. Before we talk about relative, fixed, and absolute elements, we have to acknowledge <div class="codeblock">static</div>. <div class="codeblock">static</div> is the default for any otherwise undeclared elemnt, but it's also a bit of a contradiction. On the one hand it's the renegade that plays by its own rules, the James-Dean-in-Rebel-Without-a-Cause of stylesheets. On the one hand, it's the no-fun stoic whose actual rules are "don't go anywhere or do anything," like the James-Dean's-dad-in-Rebel-Without-a-Cause stylesheets. Basically, <div class="codeblock">static</div> elements go wherever the normal HTML flow tells them to, and nowhere else. You tell a static element to <div class="codeblock">top: 10px</div>, it pretends not to hear you and stays right where the document flow (i.e. HTML) puts it.
-            </p>
-            <p>
-              <div class="codeblock">display: relative;</div>
-              <br>
-              Now that we understand <div class="codeblock">static</div>, <div class="codeblock">relative</div> is easy. <div class="codeblock">relative</div> elements go with flow of the page, but they are also happy to directions from your stylesheets to shift up, right, left, or down from where they would normally be situated. If you know you need to move your element somewhere, but you're not sure how, try <div class="codeblock">relative</div>. Bam, done.
-            </p>
-            <p>
-              <div class="codeblock">display: fixed;</div>
-              <br>
-              Here's where it gets trickier. <div class="codeblock">fixed</div> positioning orients an element within the browser window (also known as the 'viewport'). An element with <div class="codeblock">fixed</div> positioning will always stay in the same spot relative to the window border regardless of scrolling or resizing. If you want to set navigation element on a long document, fixed is the way to go. While the ability to glue elements to the screen is quite valuable, remember that the more powerful the tool, the more trouble when it backfires. In our current media landscape where a consumer may go through a dozen different screen resolutions in a single day, responsive CSS through <div class="codeblock">@media</div> queries is often necessary to ensure your elements show up properly at all screen sizes.
-              <br>
-              <br>
-              For an example of <div class="codeblock">fixed</div> in action, check out the top and bottom bars on this very page.
-            </p>
-            <p>
-              <div class="codeblock">display: absolute;</div>
-              <br>
-              We saved the best for last. <div class="codeblock">absolute</div> is perhaps the most flexible positioning element, because it provides the most control over where elements appear on the page itself. When you give an <div class="codeblock">absolute</div> element styling directions, it places itself in relation not to the document or the browser window, but the <em>containing element</em>, as long as that container <div class="codeblock">relative</div> or <div class="codeblock">absolute</div> element</em>. If there's no containing element, it behaves like <div class="codeblock">relative</div>. But if there is one, the container becomes the new point of reference.  You might have <div class="codeblock">absolute</div> links in a <div class="codeblock">relative</div> navbar, or <div class="codeblock">absolute</div> pictures in a <div class="codeblock">relative</div> album grid. Like the other modes, mastering <div class="codeblock">absolute</div> positioning is essnetial toward crafting layered, expressive documents.
-            </p>
-          </section>
+    <div id="blog-post">
+      Positioning: Relative, Fixed, and Absolute
+      <br>
+      <h2>2015 July 19</h2>
+        <section>
+          <p>
+            <code>position: static;</code>
+            <br>
+            Yes, the title was a bit of a lie. Before we talk about relative, fixed, and absolute elements, we have to acknowledge <code>static</code>. <code>static</code> is the default for any otherwise undeclared elemnt, but it's also a bit of a contradiction. On the one hand it's the renegade that plays by its own rules, the James-Dean-in-Rebel-Without-a-Cause of stylesheets. On the one hand, it's the no-fun stoic whose actual rules are "don't go anywhere or do anything," like the James-Dean's-dad-in-Rebel-Without-a-Cause stylesheets. Basically, <code>static</code> elements go wherever the normal HTML flow tells them to, and nowhere else. You tell a static element to <code>top: 10px</code>, it pretends not to hear you and stays right where the document flow (i.e. HTML) puts it.
+          </p>
           <br>
-      </div>
+          <p>
+            <code>position: relative;</code>
+            <br>
+            Now that we understand <code>static</code>, <code>relative</code> is easy. <code>relative</code> elements go with flow of the page, but they are also happy to directions from your stylesheets to shift up, right, left, or down from where they would normally be situated. If you know you need to move your element somewhere, but you're not sure how, try <code>relative</code>. Bam, done.
+          </p>
+          <br>
+          <p>
+            <code>display: fixed;</code>
+            <br>
+            Here's where it gets trickier. <code>fixed</code> positioning orients an element within the browser window (also known as the 'viewport'). An element with <code>fixed</code> positioning will always stay in the same spot relative to the window border regardless of scrolling or resizing. If you want to set navigation element on a long document, fixed is the way to go. While the ability to glue elements to the screen is quite valuable, remember that the more powerful the tool, the more trouble when it backfires. In our current media landscape where a consumer may go through a dozen different screen resolutions in a single day, responsive CSS through <code>@media</code> queries is often necessary to ensure your elements show up properly at all screen sizes.
+            <br>
+            <br>
+            For an example of <code>fixed</code> in action, check out the top and bottom bars on this very page.
+          </p>
+          <br>
+          <p>
+            <code>display: absolute;</code>
+            <br>
+            We saved the best for last. <code>absolute</code> is perhaps the most flexible positioning element, because it provides the most control over where elements appear on the page itself. When you give an <code>absolute</code> element styling directions, it places itself in relation not to the document or the browser window, but the <em>containing element</em>, as long as that container is a <code>relative</code> or <code>absolute</code> element. If there's no containing element, it behaves like <code>relative</code>. But if there is one, the container becomes the new point of reference.  You might have <code>absolute</code> links in a <code>relative</code> navbar, or <code>absolute</code> pictures in a <code>relative</code> album grid. Like the other modes, mastering <code>absolute</code> positioning is essnetial toward crafting layered, expressive documents.
+          </p>
+        </section>
+        <br>
     </div>
   </section>
 
