@@ -130,3 +130,21 @@ footer {
   bottom: 0px;
   font-size: 40%;
 }
+
+.social-links {
+  width: 500px;
+  margin: auto;
+}
+
+footer a {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  margin: 25px 15px;
+}
+
+footer img {
+  width: 48px;
+  height: 48px;
+}
