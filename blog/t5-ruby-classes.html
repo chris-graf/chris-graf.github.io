@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>chris-graf.io | BLOG</title>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic|Merriweather:400,300italic,700&effect=outline' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<body>
+   
+  <header>
+  <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
+    <nav>
+    </nav>
+  </header>
+
+    <div class="link-array">
+      <div class="img-box">
+        <a href="#">
+          <section>
+            <img src="imgs/coffee-small.png" />
+            <div class="font-effect-outline">
+              <h1>About</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="index.html">
+          <section>
+            <img src="imgs/typewriter-small.png" />
+            <div class="font-effect-outline">
+              <h1>Blog</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/engines.png" />
+            <div class="font-effect-outline">
+              <h1>Projects</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/news-small.png" />
+            <div class="font-effect-outline">
+              <h1>Media</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/rotary-small.png" />
+            <div class="font-effect-outline">
+              <h1>Contact</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+    </div>
+
+<!-- post starts here -->
+ 
+  <section>
+    <div class="font-effect-outline">
+      <div id="blog-post">
+        How to Surive Your<br>Island Adventure, Pt. 2:<br> The Way of the Coconut
+        <br>
+        <h2>2015 August 09</h2>
+          <section>
+            <p>
+              So you've stealthed, punched, and conned your way through the gauntlet of fearsome jungle animals from <a href="../t4-enumerable-methods">last week's epsiode</a>. Well done! Your reward: a bounty of sustenance, in the form of a lush coconut tree grove. You'll feast tonight on their tender white meat and savor the sweet juices so prized by urban yoga enthusiasts, if only you can figure out how to use the damn things. And you've got to handle not just the one coconut, but a whole trove of 'em. What to do?
+            </p>
+            <p>
+              Let's talk about classes. Classes are the blueprints for objects. If your projects calls for an object, and then additional similar objects, classes are your way to greatness. Once you can catch a squid and havest its ink sacs, you'll want to tatoo this on the back of your hand: "An object is an instances of a class." Just like back on the mainland, your rusted-out grocery hauling machine was a one member of that illustrious category known as the '92 Chevy Monte Carlo, an object is a specific manifestation of an abstract class.
+            </p>
+            <p>
+              All well and good, but how does that help your current predicament. Well, you need a way to keep track of all these coconuts, right?
+            <br>
+            <code>
+              class Coconut<br>
+              end<br>
+            </code>
+            </p>
+            <p>
+              Hey, that wasn't so bad. But these coconuts just sit there, they don't do anything. You've got plans, BIG plans for these glorious fruit things, with their whole burlap-on-the-outside, ice-cream-on-the-inside schtick. They've got so many uses: You can drink em, you can eat em, you can throw em, you can squash bugs with em. But they also have special properties you'll want to record, particularly how much water and meat are left in each one. Let's see how that last thing works. Restarting...
+            <br>
+            <code>
+              class Coconut<br>
+                def initialize<br>
+                  @water = 10<br>
+                  @meat = 10<br>
+                end<br>
+              # ...<br>
+            </code>
+            <p>
+             Wow, now you can track their contents whenever you pluck a new one (by assigning <code>Coconut.new</code>). The @ tells us that 'water' and 'meat' are instance variables. Each coconut objects will be able to interact with these attributes, but changes in one coconut will not affect another. In other words, they're the sole purview to their instance (i.e. object). Every class needs an <code>initialize</code> method, but from there it's up to your imagination:
+            <br>
+            <code>
+                coconut_status = :intact<br>
+                <br>
+                def tap # gotta get that juice out somehow
+                  if conconut_status == :intact<br>
+                    coconut_status = :tapped<br>
+                    puts "You smash a hole in the nut's jungle-forged exterior."<br>
+                  end<br>
+                end<br>
+                <br>
+                def drink<br>
+                  raise StandardError.new("Tap it before you lap it!") if coconut_status == :intact<br>
+                  if @water > 0<br>
+                    @water -= 1<br>
+                    puts "You take one life-saving gulp from the fuzzy bowling ball."<br>
+                  else<br>
+                    puts "Drier than P. G. Wodehouse."<br>
+                  end<br>
+                end<br>
+                <br>
+                def crack_open # and now for the meat<br>
+                  if coconut_status != :opened<br>
+                    coconut_status = :opened<br>
+                    puts "The shatter of the broken husk echoes throughout the grove, the last cry of a vengeful earth."<br>
+                  end<br>
+                end<br>
+                <br>
+                def eat<br>
+                  raise StandardError.new("To survive, we must destroy the things we love.") unless coconut_status == :opened<br>
+                  if @meat > 0<br>
+                    @meat -= 1<br>
+                    puts "You devour the flesh of your prey, primal in your hunger."<br>
+                  else<br>
+                    puts "You gnash fruitlessly at the dessicated hull."<br>
+                  end<br>
+                # ...<br>
+            </code>
+            </p>
+            <p>
+              So we've solved the food situation, but what about those annoying bugs hopping around? This would be a bad time to acquire malaria, far as you are from any source of Canada Dry quinine-infused tonic water. Luckily, we can also define methods that let us use our object to interact with other objects.
+            </p>
+            <br>
+            <code>
+                def smash(bug)<br>
+                  bug.delete<br>
+                  puts "Victory... but at what cost? The omnipresent buzzing grows in judgmental menace."<br>
+                end<br>
+              end<br>
+            </code>
+            <br>
+              That should just about do it! Now go forth, with the full might and functionality of classes at you command.
+          </section>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <h1>
+      <p>&copy; 2015 Christopher Graf</p>
+    </h1>
+  </footer>
+
+</body>
+
+</html>
