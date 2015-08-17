@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>chris-graf.io | BLOG</title>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic|Merriweather:400,300italic,700&effect=outline' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<body>
+   
+  <header>
+  <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
+    <nav>
+    </nav>
+  </header>
+
+    <div class="link-array">
+      <div class="img-box">
+        <a href="#">
+          <section>
+            <img src="imgs/coffee-small.png" />
+            <div class="font-effect-outline">
+              <h1>About</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="index.html">
+          <section>
+            <img src="imgs/typewriter-small.png" />
+            <div class="font-effect-outline">
+              <h1>Blog</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/engines.png" />
+            <div class="font-effect-outline">
+              <h1>Projects</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/news-small.png" />
+            <div class="font-effect-outline">
+              <h1>Media</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="../resume.html">
+          <section>
+            <img src="imgs/rotary-small.png" />
+            <div class="font-effect-outline">
+              <h1>Resume</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+    </div>
+
+<!-- post starts here -->
+ 
+  <section>
+    <div class="font-effect-outline">
+      <div id="blog-post">
+        Confusion Junction: What's A Function?
+        <br>
+        <h2>2015 August 16</h2>
+          <section>
+            <p>
+              There are languages, and then there are paradigms. (Warning: based on limited late-night research)
+            </p>
+            <br>
+            <p>
+              Imagine someone who grew up a small, isolated town in the United States or the UK, and has only ever spoken English their entire lives. Better yet, image that this person doesn't even know that other languages exist. "Language" is barely even a concept they're aware of: to them, it's just another synonym for English. Then one day, they meet a Spanish speaker, and you can hear the rubbery creak as their horizons are forcibly expanded. Our hypothetical subject is now aware that their language is only one of <em>at least</em> two languages in the world. They learn of French, then Italian, then Portugues, German, and Polish, and now look back on their monolinguistic upbringing and wonder how far they've come. And undoubtedly, they have come quite far, but their perspective is in many ways still quite narrow.
+            </p>
+            <br>
+            <p>
+              While the various Romance and Germanic languages may seem worlds apart from the perspective of our recently-graduated multilinguist, from a global view of spoken languages they're relatively similar. They all belong to the same linguistic <a href="https://en.wikipedia.org/wiki/Language_family">family</a>, "Indo-European." If you ask this person what qualities a language might have, they would probably describe to you the differences between various languages within this family. They could consider gendered-ness, how most languages have gendered nouns but English doesn't. Or conjugation, how the different languages have varying levels of granularity between verb tenses. Or maybe subject-verb-object order, and the degree to which it is fixed or malleable. These considerations, however, are all inscribed within the known quantity of variance recognized among widely-spoken European languages. It would be much more difficult for this person to imagine something like tonality or symbol-based orthography, qualities nonexistent among Romance languages but pervasive in the "Sino-Tibetan" family, which includes Mandarin Chinese.
+            </p>
+            <p>
+              It should be no surprise that the same principal can apply to programming languages. We're all on good terms with Ruby by this point, and some of us might have experience with other languages like Python or Java. For someone who's only ever worked in the Object Oriented paradigm, however, it can be a surprising and englightening experience to introduce yourself to an entirely new "language family." 
+            </p>
+            <p>
+              Functional programming is one of these other paradigms. While OOP is good at modeling objects, it may not be a huge surprise to learn than FP is good at modeling <em>functions</em>. But what are functions, exactly? The closest thing we have in OOP are methods, but that's not a perfect analogy, since objects are not the same thing in OOP and FP.
+            </p>
+            <p>
+              Here's an addition to our horizons: the purest FP language has no assignment operator. In other words, no way to declare a variable as representing some value. Take a look at this <a href="http://landoflisp.com/guess.lisp">simple program in Lisp</a>, a well-known functional language, and note the total lack of equals signs. The use of "defparameter" is rather similar to Ruby's global variable assignment, but note that this is also done through a function.
+            </p>
+            <p>
+              Here's a real melon-scratcher: Lisp has <em>only two data types</em>, 'lists' and 'atoms', aka collections and items. Many lisp functions involve shuffling these around in fun ways, though it does have other ways to define what OOP folks know as data types.
+            </p>
+            <br>
+            <p>
+              There's a lot of explan about the differences between FP and OOP and other paradigns, and FP in particular involves some pretty complex math that I'm not too comfortable explaining. But learning more about these things also illuminates our current body of knowledge in novel ways in the same way that gaining perspective always does: hilighting assumptions we didn't even know we had, and asking us to consider them.
+            </p>
+          </section>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <h1>
+      <p>&copy; 2015 Christopher Graf</p>
+    </h1>
+  </footer>
+
+</body>
+
+</html>
