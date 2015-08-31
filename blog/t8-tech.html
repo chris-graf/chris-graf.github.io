@@ -141,7 +141,7 @@
               "The undefined salad contains grapes."
               // undefined
               </pre></code>
-              Oh dear. What's happening here is that when we invoke <code>this.size</code>, the <code>this</code> is <em>not</em> our <code>fruitSalad</code> object, but the unnamed function inside the <code>displayContents</code> property. And this that function doesn't have any property "size", JavaScript just shrugs its shoulders and tosses us a nice big bowl of undefined salad.
+              Oh dear. What's happening here is that when we invoke <code>this.size</code>, the <code>this</code> is <em>not</em> our <code>fruitSalad</code> object, and it isn't the unnamed function inside the <code>displayContents</code> property either. JavaScript just gets lost, and returns to either "window", if called in a browser (maybe, sometimes, still not clear on this one) or nothing, i.e. "undefined". And since neither of these safety nets have any property "size", JavaScript just shrugs its shoulders and tosses us a nice big bowl of undefined salad.
             </p>
             <p>
               There are already a few workarounds for this problem, which I won't get into here, becasue the arrow function is newer and shinier than all of them. Check it out:
