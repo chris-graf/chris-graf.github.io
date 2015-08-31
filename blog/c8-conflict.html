@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>chris-graf.io | BLOG</title>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic|Merriweather:400,300italic,700&effect=outline' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<body>
+   
+  <header>
+  <h1><a href="http://chris-graf.github.io">chris-graf.io</a>/blog</h1>
+    <nav>
+    </nav>
+  </header>
+
+    <div class="link-array">
+      <div class="img-box">
+        <a href="#">
+          <section>
+            <img src="imgs/coffee-small.png" />
+            <div class="font-effect-outline">
+              <h1>About</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="index.html">
+          <section>
+            <img src="imgs/typewriter-small.png" />
+            <div class="font-effect-outline">
+              <h1>Blog</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/engines.png" />
+            <div class="font-effect-outline">
+              <h1>Projects</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href=#>
+          <section>
+            <img src="imgs/news-small.png" />
+            <div class="font-effect-outline">
+              <h1>Media</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+
+      <div class="img-box">
+        <a href="../resume.html">
+          <section>
+            <img src="imgs/rotary-small.png" />
+            <div class="font-effect-outline">
+              <h1>Resume</h1>
+            </div>
+          </section>
+        </a>
+      </div>
+    </div>
+
+<!-- post starts here -->
+ 
+  <section>
+    <div class="font-effect-outline">
+      <div id="blog-post">
+        On Salads of Indefinite Size
+        <br>
+        <h2>2015 August 30</h2>
+          <section>
+            <p>
+               More on bridging the gap between Ruby and JavaScript.
+            </p>
+            <p>
+              A brief recap of our premise: After spending several weeks with the sugary, slimmed-down Ruby, JavaScript feels clunky and verbose. Got it? Good. 
+            </p>
+            <p>
+              You have an array of integers. You want to get a new array, same as the old one, except every one of the integers has been doubled. How do you do that in Ruby? 
+              <code><pre>
+              integers = [1, 2, 3, 5, 10]
+              #=> [1, 2, 3, 5, 10]
+              integers.map { |integer| integer * 2 }
+              #=> [2, 4, 6, 10, 20]
+              </pre></code>
+            Fantastic, you are beautiful animal. Full marks.
+            <br>
+            How do you do that same thing in JavaScript?
+              <code><pre>
+              var integers = [1, 2, 3, 5, 10];
+              // [1, 2, 3, 5, 10]
+              </pre></code>
+            Cool cool. Looks pretty nice so far.
+              <code><pre>
+              integers.map(function(integer){ return integer * 2 });
+              // [2, 4, 6, 10, 20]
+              </pre></code>
+            Hey, that's... that's not too bad, actually. A few more keywords and brackets, but still pretty straightforward and readable. BUT! Can we do better?
+              <code><pre>
+              integers.map(integer => integer * 2 );
+              // [2, 4, 6, 10, 20]
+              </pre></code>
+            Holy crap! JavaScript isn't supposed to be this elegant. Put that in your <code>|</code> and smoke it, Ruby.
+            </p>
+            <p>
+            This wonderful new syntax is known as an <em>arrow function</em>, and it's a new addition with ECMAScript 6, the most recently developed JavaScript standard. But arrow functions do more than just look pretty, they also provide a shortcut solution to a long-standing frustration with JavaScript functions.
+            </p>
+            <p>Take as an example this rather contrived little object:
+            <code><pre>
+            var fruitSalad = {
+              size: "large",
+              contents: ["apples", "avocados", "grapes"],
+              displayContents: function() {
+                this.contents.forEach(fruit => {
+                  console.log("The " + this.size + " salad contains " + fruit + ".");
+                })
+              }
+            }
+            </code></pre>
+            <p>
+              We already know we can't simply invoke eg. <code>contents</code>, we have to call <code>this.contents</code>. So things look pretty reasonable, here, what happens when we...
+              <code><pre>
+              fruitSalad.displayContents();
+              "The undefined salad contains apples."
+              "The undefined salad contains avocados."
+              "The undefined salad contains grapes."
+              // undefined
+              </pre></code>
+              Oh dear. What's happening here is that when we invoke <code>this.size</code>, the <code>this</code> is <em>not</em> our <code>fruitSalad</code> object, but the unnamed function inside the <code>displayContents</code> property. And this that function doesn't have any property "size", JavaScript just shrugs its shoulders and tosses us a nice big bowl of undefined salad.
+            </p>
+            <p>
+              There are already a few workarounds for this problem, which I won't get into here, becasue the arrow function is newer and shinier than all of them. Check it out:
+            <code><pre>
+            var fruitSalad = {
+              size: "large",
+              contents: ["apples", "avocados", "grapes"],
+              displayContents: function() {
+                this.contents.forEach(fruit => {
+                  console.log("The " + this.size + " salad contains " + fruit + ".");
+                })
+              }
+            }
+
+            fruitSalad.displayContents();
+            "The large salad contains apples."
+            "The large salad contains avocados."
+            "The large salad contains grapes."
+            // undefined
+            </code></pre>
+            </p>
+            <p>
+              One more tool for the belt, friends.
+            </p>
+              Source reading:
+              <ul>
+                <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</li>
+                <li>http://www.2ality.com/2012/04/arrow-functions.html</li>
+              </ul>
+            </p>
+          </section>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <h1>
+      <p>&copy; 2015 Christopher Graf</p>
+    </h1>
+  </footer>
+
+</body>
+
+</html>
