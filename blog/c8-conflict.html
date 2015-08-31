@@ -80,98 +80,30 @@
   <section>
     <div class="font-effect-outline">
       <div id="blog-post">
-        On Salads of Indefinite Size
+        A Good Story
         <br>
         <h2>2015 August 30</h2>
           <section>
             <p>
-               More on bridging the gap between Ruby and JavaScript.
+              Every year, thousands of Americans are assigned roommates by their college housing office. As an incoming freshman with the Class of 2013, I was no different. My roommate assignment could be called a mild success. My roommate "Jake" and I didn't become fast friends, but we got along well enough to share the odd conversation, and get on each others nerves--with a couple notable exceptions.
             </p>
+              I gave Jake a couple reasons to be annoyed at my presence throughout our freshman year, but those were all clear-cut, contained instances of jackass behavior that might be expected of a young nerd fresh from the nest, newly introduced to partying and the like. Embarassing in retrospect, but not egregious, and not the topic of this post.
             <p>
-              A brief recap of our premise: After spending several weeks with the sugary, slimmed-down Ruby, JavaScript feels clunky and verbose. Got it? Good. 
+              My gripe with Jake stemmed from a particular routine of his. To explain, it's necessary to mention that Jake practiced some branch of (what I believe was) Orthodox Judaism. Among other things, his faith proscribed him from interacting with electronic devices during the Sabbath, i.e. between sundown Friday and sundown Saturday. He attended services at an on-campus house of worship every Saturday morning. These services began at an early hour, especially for a weekday, and required that he get up around 7 AM to be there on time. I mentioned that Jake wasn't able to *interact* with electronic devices during this time, but he could still be present around them. One such device was his cell phone, which would he set an alarm on (during the day on Friday for 7 AM Saturday morning.
             </p>
+              Jake could set the alarm beforehand, and he could use the alarm to wake up. What Jake *couldn't* do was turn the alarm off once it began to sound. And sound it would, at a high volume, for about 15 minutes. I should mention that I am very much not a morning person. I appreciated Jake's need for an alarm, since I myself was usually dead to the world for the first 5 minutes after mine went off, and functioning at around 50% capacity for the next 10 minutes after that.
             <p>
-              You have an array of integers. You want to get a new array, same as the old one, except every one of the integers has been doubled. How do you do that in Ruby? 
-              <code><pre>
-              integers = [1, 2, 3, 5, 10]
-              #=> [1, 2, 3, 5, 10]
-              integers.map { |integer| integer * 2 }
-              #=> [2, 4, 6, 10, 20]
-              </pre></code>
-            Fantastic, you are beautiful animal. Full marks.
-            <br>
-            How do you do that same thing in JavaScript?
-              <code><pre>
-              var integers = [1, 2, 3, 5, 10];
-              // [1, 2, 3, 5, 10]
-              </pre></code>
-            Cool cool. Looks pretty nice so far.
-              <code><pre>
-              integers.map(function(integer){ return integer * 2 });
-              // [2, 4, 6, 10, 20]
-              </pre></code>
-            Hey, that's... that's not too bad, actually. A few more keywords and brackets, but still pretty straightforward and readable. BUT! Can we do better?
-              <code><pre>
-              integers.map(integer => integer * 2 );
-              // [2, 4, 6, 10, 20]
-              </pre></code>
-            Holy crap! JavaScript isn't supposed to be this elegant. Put that in your <code>|</code> and smoke it, Ruby.
+              So here we have the source of the conflict: Jake had a good reason to what he was doing (set an alarm and leave without turning it off), I had a very good reason to not want him to do that thing. This was a slightly more interesting version of the more common alarm clock problem, where one roommate needs to get up early for a class on a day the other roommate would prefer sleeping in. The religious aspect made this conflict even less tractable, however. His need was greater, but so was the externality it effected as a consequence.
             </p>
+              How did we solve this? I made my displeasure known, he apologized, and then we both pretty much lived with the status quo for the rest of the year. My reasons for not putting much effort into implementing an alternate solution (earplugs for me, headphones for him, finding an alarm with a vibration option or shorter cycle) were mostly economic, in the philosophical sense. By permitting to have my sleep disrupted by his alarm every Saturday morning, I built up rooommate capital that I could cash in for tolerance of my occasional boisterous return on a Friday or Saturday night.
             <p>
-            This wonderful new syntax is known as an <em>arrow function</em>, and it's a new addition with ECMAScript 6, the most recently developed JavaScript standard. But arrow functions do more than just look pretty, they also provide a shortcut solution to a long-standing frustration with JavaScript functions.
+              On top of that, I lived with friends or on my own for following three years of college, and never had any major disagreements with them. This episode with Jake gave me a solid "roommate irritation" anecdote to fill an otherwise blank spot in my story portfolio.
             </p>
-            <p>Take as an example this rather contrived little object:
-            <code><pre>
-            var fruitSalad = {
-              size: "large",
-              contents: ["apples", "avocados", "grapes"],
-              displayContents: function() {
-                this.contents.forEach(fruit => {
-                  console.log("The " + this.size + " salad contains " + fruit + ".");
-                })
-              }
-            }
-            </code></pre>
+              The lesson here is that by accepting a compromise with good humor, instead getting indigant and taking a stand on principal, I was able to maintain a decent relationship with my roommate and come out of the experience with something to show.
             <p>
-              We already know we can't simply invoke eg. <code>contents</code>, we have to call <code>this.contents</code>. So things look pretty reasonable, here, what happens when we...
-              <code><pre>
-              fruitSalad.displayContents();
-              "The undefined salad contains apples."
-              "The undefined salad contains avocados."
-              "The undefined salad contains grapes."
-              // undefined
-              </pre></code>
-              Oh dear. What's happening here is that when we invoke <code>this.size</code>, the <code>this</code> is <em>not</em> our <code>fruitSalad</code> object, but the unnamed function inside the <code>displayContents</code> property. And this that function doesn't have any property "size", JavaScript just shrugs its shoulders and tosses us a nice big bowl of undefined salad.
+       
             </p>
-            <p>
-              There are already a few workarounds for this problem, which I won't get into here, becasue the arrow function is newer and shinier than all of them. Check it out:
-            <code><pre>
-            var fruitSalad = {
-              size: "large",
-              contents: ["apples", "avocados", "grapes"],
-              displayContents: function() {
-                this.contents.forEach(fruit => {
-                  console.log("The " + this.size + " salad contains " + fruit + ".");
-                })
-              }
-            }
 
-            fruitSalad.displayContents();
-            "The large salad contains apples."
-            "The large salad contains avocados."
-            "The large salad contains grapes."
-            // undefined
-            </code></pre>
-            </p>
-            <p>
-              One more tool for the belt, friends.
-            </p>
-              Source reading:
-              <ul>
-                <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</li>
-                <li>http://www.2ality.com/2012/04/arrow-functions.html</li>
-              </ul>
-            </p>
           </section>
       </div>
     </div>
